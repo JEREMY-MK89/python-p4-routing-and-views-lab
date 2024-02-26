@@ -14,8 +14,6 @@ def print_string(parameter):
 def count(number):
     numbers = '\n'.join(str(i) for i in range(number + 1))
     return f'{numbers}\n'
-    print(f"Actual Response: {response}")  
-    return response
    
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
