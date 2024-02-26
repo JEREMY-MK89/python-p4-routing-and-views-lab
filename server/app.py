@@ -10,14 +10,13 @@ def index():
 def print_string(parameter):
     print(parameter)  
     return parameter
-
-@app.route('/count/<int:parameter>')
-def count(parameter):
-    result = '\n'.join(map(str, range(parameter + 1)))
-    print(result)
-    return result, 200
-
-
+@app.route('/count/<int:number>', methods=['GET'])
+def count(number):
+    numbers = '\n'.join(str(i) for i in range(number + 1))
+    return f'{numbers}\n'
+    print(f"Actual Response: {response}")  
+    return response
+   
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
 def math(num1, operation, num2):
